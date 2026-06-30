@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RegSense — Agentic Compliance Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>RegSense</h1>
+    <p class="subtitle">Agentic Compliance — From Regulatory Text to Operational Action</p>
+    <p class="chain-status {{ 'ok' if chain_ok else 'broken' }}">
+      Audit chain: {{ "✔ verified, tamper-free" if chain_ok else "⚠ INTEGRITY FAILURE" }}
+    </p>
+  </header>
+
+  <main>
+    {% for status, obligations in buckets.items() %}
+    <section class="bucket bucket-{{ status|lower }}">
+      <h2>{{ status }} ({{ obligations|length }})</h2>
+      {% if obligations %}
+        <table>
+          <thead>
+            <tr>
+              <th>Clause</th>
+              <th>Intermediary</th>
+              <th>Requirement</th>
+              <th>Action Type</th>
+              <th>Frequency</th>
+              <th>Evidence Required</th>
+              <th>Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ob in obligations %}
+            <tr>
+              <td>{{ ob.source_clause }}</td>
+              <td>{{ ob.intermediary_category }}</td>
+              <td>{{ ob.requirement_summary }}</td>
+              <td>{{ ob.action_type }}</td>
+              <td>{{ ob.frequency }}</td>
+              <td>{{ ob.evidence_required }}</td>
+              <td>v{{ ob.version }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="empty">No obligations in this state.</p>
+      {% endif %}
+    </section>
+    {% endfor %}
+  </main>
+
+  <footer>
+    <p>Endpoints: <code>POST /ingest</code> · <code>POST /obligations/&lt;id&gt;/evidence</code> ·
+       <code>GET /audit-log</code> · <code>GET /obligations</code></p>
+  </footer>
+</body>
+</html>

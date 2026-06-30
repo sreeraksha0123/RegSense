@@ -1,0 +1,30 @@
+SAMPLE REGULATORY TEXT — illustrative excerpt in the style of SEBI's Master
+Circular for Stockbrokers, prepared for demonstration purposes.
+(Paraphrased/illustrative wording — not a verbatim reproduction of any
+official SEBI circular. For the real submission, use the actual published
+text from SEBI's website: https://www.sebi.gov.in)
+
+---
+
+Clause 4.2 — Client KYC Re-verification
+Stockbrokers shall re-verify the Know Your Customer (KYC) records of all
+active clients at least once every two years, and shall update any change
+in client information (address, bank account, income range, etc.) within
+seven working days of becoming aware of such change. Stockbrokers must
+maintain documentary proof of each re-verification cycle for inspection
+by the exchange or SEBI.
+
+Clause 7.1 — Daily Margin Reporting
+Every stockbroker shall report client-wise margin collected (cash, cash
+equivalent, and non-cash) to the relevant stock exchange on a daily basis,
+no later than the end of the next trading day (T+1). Reports must
+reconcile against the broker's internal ledger and any discrepancy
+exceeding 1% must be flagged and explained in the same submission.
+
+Clause 9.3 — Segregation of Client Funds
+Stockbrokers shall maintain client funds in a separate "Client Bank
+Account," distinct from the broker's own funds, at all times. Commingling
+of client and proprietary funds, even temporarily, is prohibited.
+Brokers shall reconcile the Client Bank Account balance against client
+ledger balances on a daily basis and retain reconciliation records for a
+minimum of five years.
